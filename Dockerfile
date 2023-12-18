@@ -12,8 +12,9 @@ COPY internal/httpclient/go.* internal/httpclient/
 COPY internal/client-go/go.* internal/client-go/
 
 ENV GO111MODULE on
-ENV CGO_ENABLED 1
-ENV CGO_CPPFLAGS -DSQLITE_DEFAULT_FILE_PERMISSIONS=0600
+ENV CGO_ENABLED 0
+ENV GOOS linux
+ENV GOARCH amd64
 
 RUN go mod download
 
